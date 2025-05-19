@@ -1,0 +1,90 @@
+.mapouter {
+    position: relative;
+    text-align: right;
+    height: 400px;
+    width: 360px;
+}
+
+.gmap_canvas {
+    overflow: hidden;
+    background: none;
+    height: 400px;
+    width: 360px;
+}
+
+.section-title h4,
+.section-title h5 {
+    color: #000;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.section-title h4::after,
+.section-title h5::after,
+.section-title h4::before,
+.section-title h5::before {
+    position: absolute;
+    right: 0;
+    top: -6px;
+    height: 32px;
+    width: 4px;
+    background: #e53637;
+    content: "";
+}
+
+.hr-one {
+    margin: 20px auto;
+    width: 40%;
+    border: 0;
+    height: 2px;
+    background-image: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 127, 80, 1), rgba(255, 255, 255, 0));
+}
+
+.product__item_details {
+    color: #000;
+    line-height: 26px;
+    margin: 0 50px;
+}
+
+.product__item__pic {
+    height: 500px;
+}
+
+.set-bg {
+    background-position: center;
+}
+
+html,
+body,
+.header,
+.footer {
+    background-image: linear-gradient(to right, rgba(212, 252, 121, 1), rgba(150, 230, 161, 1), rgba(212, 252, 121, 1));
+}
+
+.hero__slider.owl-carousel .owl-nav button {
+    background: #d4fc79;
+}
+
+.hero__slider.owl-carousel .owl-nav button::after {
+    background: rgba(150, 230, 161, 1);
+}
+
+.header {
+    border-bottom: 1px solid #e53637;
+}
+
+.footer {
+    border-top: 1px solid #e53637;
+}
+
+.header__menu ul li a,
+.footer__nav ul li a {
+    color: #000;
+}
+
+.header__menu ul li a:hover{
+    color: #e53637;
+}
+
+.header__menu ul li a:inactive{
+    color: #e53637;
+}
