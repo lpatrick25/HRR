@@ -31,6 +31,7 @@ use Illuminate\Support\Facades\URL;
 use Illuminate\Validation\Rule;
 use Illuminate\Validation\ValidationException;
 
+
 class NavigationController extends Controller
 {
     // Homepage
@@ -620,7 +621,7 @@ class NavigationController extends Controller
             // Validation rules
             $validated = $request->validate([
                 'first_name' => 'required|string|max:50|regex:/^[a-zA-Z\s]+$/',
-                'last_name'  => 'required|string|max:50|regex:/^[a-zA-Z\s]+$/',
+                'last_name' => 'required|string|max:50|regex:/^[a-zA-Z\s]+$/',
                 'phone_number' => [
                     'required',
                     'string',
@@ -629,7 +630,7 @@ class NavigationController extends Controller
                 ],
             ], [
                 'first_name.required' => 'First name is required.',
-                'last_name.required'  => 'Last name is required.',
+                'last_name.required' => 'Last name is required.',
                 'phone_number.required' => 'Phone number is required.',
                 'phone_number.unique' => 'This phone number is already registered.',
                 'first_name.regex' => 'First name can only contain letters and spaces.',
@@ -674,11 +675,15 @@ class NavigationController extends Controller
 
             // Validate request
             $validated = $request->validate([
-                'current_password' => ['required', 'string', function ($attribute, $value, $fail) use ($user) {
-                    if (!Hash::check($value, $user->password)) {
-                        $fail('Current password is incorrect.');
+                'current_password' => [
+                    'required',
+                    'string',
+                    function ($attribute, $value, $fail) use ($user) {
+                        if (!Hash::check($value, $user->password)) {
+                            $fail('Current password is incorrect.');
+                        }
                     }
-                }],
+                ],
                 'new_password' => 'required|string|min:8|regex:/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]+$/',
                 'confirm_password' => 'required|same:new_password',
             ], [
