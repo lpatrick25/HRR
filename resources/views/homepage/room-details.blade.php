@@ -414,11 +414,11 @@
                     <div class="product__sidebar">
                         <div class="sidebar-container">
                             <div class="section-title">
-                                <h5>Tiya Inday Haven Farm Resort</h5>
+                                <h5>Belle's Bistro Resort and Hotel</h5>
                             </div>
                             <div class="map-container">
                                 <iframe style="width: 100%; height: 100%; border: none;"
-                                    src="https://www.google.com/maps/embed/v1/directions?origin=Tia+Inday+Haven+Farm,+Balocawehay,+Abuyog,+Leyte,+Philippines&destination=Abuyog+Bus+Terminal,+Abuyog,+Leyte,+Philippines&key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8">
+                                    src="https://www.google.com/maps/embed/v1/place?q=Poblacion+Zone+1,+Mayorga,+Leyte,+Eastern+Visayas,+Philippines,+Mayorga,+Philippines,&key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8">
                                 </iframe>
                             </div>
                         </div>

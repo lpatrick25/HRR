@@ -120,9 +120,9 @@
         .experience-text h4::after {
             content: "";
             display: block;
-            width: 50px;
+            width: 100px;
             height: 4px;
-            background-color: #ff9f1c;
+            background-color: #9400D3;
             margin-top: 8px;
         }
 
@@ -178,7 +178,7 @@
         .cta {
             text-align: center;
             padding: 50px;
-            background: #ff9f1c;
+            background: #9400D3;
             color: white;
             border-radius: 10px;
             box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.2);
@@ -192,7 +192,7 @@
 
         .cta a {
             background: white;
-            color: #ff9f1c;
+            color: #9400D3;
             padding: 12px 25px;
             font-size: 18px;
             border-radius: 5px;
@@ -222,7 +222,7 @@
 
 @section('APP-CONTENT')
     <!-- Magazine-Style Header -->
-    <section class="normal-breadcrumb set-bg" data-setbg="{{ asset('homepage/img/hero/hero-4.png') }}" data-aos="fade-up">
+    <section class="normal-breadcrumb set-bg" data-setbg="{{ asset('homepage/img/hero/cover1.jpg') }}" data-aos="fade-up">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-lg-12 text-center">
@@ -244,7 +244,7 @@
                     landscapes, fresh air, and gourmet dining.</p>
             </div>
             <div class="experience-image" data-aos="fade-left">
-                <img src="{{ asset('homepage/img/hero/hero-5.jpeg') }}" alt="Nature Escape">
+                <img src="{{ asset('homepage/img/hero/cover3.jpg') }}" alt="Nature Escape">
             </div>
         </div>
 
@@ -256,7 +256,7 @@
                     conference, or special gathering, our venue is the perfect choice.</p>
             </div>
             <div class="experience-image" data-aos="fade-right">
-                <img src="{{ asset('homepage/img/hero/hero-2.jpeg') }}" alt="Event Hall">
+                <img src="{{ asset('homepage/img/hero/cover5.jpg') }}" alt="Event Hall">
             </div>
         </div>
 
@@ -268,7 +268,7 @@
                     nature’s calming presence.</p>
             </div>
             <div class="experience-image" data-aos="fade-left">
-                <img src="{{ asset('homepage/img/hero/hero-3.jpeg') }}" alt="Garden">
+                <img src="{{ asset('homepage/img/hero/cover2.jpg') }}" alt="Garden">
             </div>
         </div>
 
@@ -280,7 +280,7 @@
                     place for relaxation and adventure.</p>
             </div>
             <div class="experience-image" data-aos="fade-right">
-                <img src="{{ asset('homepage/img/hero/hero-4.png') }}" alt="Cottages">
+                <img src="{{ asset('homepage/img/hero/cover4.jpg') }}" alt="Cottages">
             </div>
         </div>
 

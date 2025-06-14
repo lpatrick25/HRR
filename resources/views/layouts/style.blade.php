@@ -105,7 +105,7 @@
     }
 
     .step-indicator.active i {
-        color: #337ab7;
+        color: #9400D3;
     }
 
     .progress-bar-custom {

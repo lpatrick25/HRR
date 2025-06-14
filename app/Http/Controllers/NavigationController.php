@@ -5,7 +5,9 @@ namespace App\Http\Controllers;
 use App\Mail\NewsletterSubscriptionMail;
 use App\Models\Contact;
 use App\Models\ContactInquiry;
+use App\Models\Food;
 use App\Models\FoodCategory;
+use App\Models\FoodPicture;
 use App\Models\HotelReview;
 use App\Models\HotelRoom;
 use App\Models\HotelTransaction;
@@ -49,10 +51,10 @@ class NavigationController extends Controller
         return view('homepage.categories', compact('hotelRooms', 'resortCottages'));
     }
 
-    public function categoryKapehan()
+    public function categoryFood()
     {
-        return view('homepage.index');
-        // return view('homepage.kapehan');
+        $foods = Food::with('pictures')->get();
+        return view('homepage.food', compact('foods'));
     }
 
     public function categoryHotel()

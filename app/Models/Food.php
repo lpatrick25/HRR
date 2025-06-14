@@ -16,7 +16,8 @@ class Food extends Model
         'food_category_id',
         'food_status',
         'food_price',
-        'food_unit'
+        'food_unit',
+        'picture'
     ];
 
     public function foodCategory()
@@ -27,5 +28,11 @@ class Food extends Model
     public function foodTransactions()
     {
         return $this->hasMany(FoodTransaction::class);
+    }
+
+    public function pictures()
+    {
+
+        return $this->hasMany(FoodPicture::class);
     }
 }

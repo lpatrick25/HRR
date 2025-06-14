@@ -104,7 +104,7 @@
             paginationVAlign: 'bottom',
             toolbarAlign: 'right',
             formatLoadingMessage: function formatLoadingMessage() {
-                return 'Tia Inday Haven Farm Resort';
+                return 'Belles Bistro Resort and Hotel';
             },
         });
 

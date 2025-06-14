@@ -53,7 +53,6 @@
             width: 40%;
             border: 0;
             height: 2px;
-            /** background-image: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 226, 106, 1), rgba(255, 255, 255, 0)); **/
             background-image: linear-gradient(to right, rgba(255, 255, 255, 0), rgb(138, 43, 226), rgba(255, 255, 255, 0));
 
         }
@@ -85,11 +84,15 @@
 
         /* Set different background images dynamically */
         .col-lg-6:nth-child(1) .fixed-img {
-            background-image: url('{{ asset('homepage/img/Room1.png') }}');
+            background-image: url('{{ asset('homepage/img/cover3.jpg') }}');
         }
 
         .col-lg-6:nth-child(2) .fixed-img {
-            background-image: url('{{ asset('homepage/img/cottage-2.jpeg') }}');
+            background-image: url('{{ asset('homepage/img/cover34.jpg') }}');
+        }
+
+        .col-lg-6:nth-child(3) .fixed-img {
+            background-image: url('{{ asset('homepage/img/cover4.jpg') }}');
         }
 
         /* Overlay effect on images */
@@ -396,7 +399,7 @@
                             <div class="overlay"></div>
                         </div>
                         <div class="card-body text-center">
-                            <h4 class="card-title font-weight-bold">Hotel</h4>
+                            <h4 class="card-title font-weight-bold">Resort</h4>
                             <p class="card-text text-muted">
                                 Belle's Bistro Resort offers a perfect blend of luxury and comfort nestled in nature,
                                 featuring cozy cottages, a refreshing pool, and exciting water slides for the whole family.
@@ -414,7 +417,7 @@
                             <div class="overlay"></div>
                         </div>
                         <div class="card-body text-center">
-                            <h4 class="card-title font-weight-bold">Resort</h4>
+                            <h4 class="card-title font-weight-bold">Hotel</h4>
                             <p class="card-text text-muted">
                                 Belle's Bistro Hotel is a cozy retreat with comfortable rooms, essential amenities, and
                                 friendly service, ideal for singles, couples, and families seeking a peaceful and memorable

@@ -128,6 +128,7 @@ class DatabaseSeeder extends Seeder
                     'food_price' => rand(10, 50) . '.00',
                     'food_status' => 'Available',
                     'food_unit' => ['Piece', 'Slice', 'Serving', 'Platter', 'Plate', 'Set', 'Combo', 'Cup', 'Glass', 'Bottle', 'Can'][rand(0, 10)],
+                    'picture' => 'img/profile/1.jpg',
                 ],
                 [
                     'food_name' => $category->category_name . ' Item 2',
@@ -135,6 +136,7 @@ class DatabaseSeeder extends Seeder
                     'food_price' => rand(10, 50) . '.00',
                     'food_status' => 'Available',
                     'food_unit' => ['Piece', 'Slice', 'Serving', 'Platter', 'Plate', 'Set', 'Combo', 'Cup', 'Glass', 'Bottle', 'Can'][rand(0, 10)],
+                    'picture' => 'img/profile/1.jpg',
                 ],
             ]);
         }

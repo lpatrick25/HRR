@@ -193,17 +193,17 @@
 @endsection
 @section('APP-CONTENT')
     <!-- Normal Breadcrumb Begin -->
-    <section class="normal-breadcrumb set-bg" data-setbg="{{ asset('homepage/img/normal-breadcrumb.png') }}">
+    <section class="normal-breadcrumb set-bg" data-setbg="{{ asset('homepage/img/cover3.jpg') }}">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
                     <div class="normal__breadcrumb__text">
                         <h2
-                            style="background-image: linear-gradient(to right, rgba(212, 252, 121, 0.1), rgba(150, 230, 161, 0.8), rgba(212, 252, 121, 0.1)); padding: 10px; color: #000;">
+                            style="background-image: linear-gradient(to right, rgba(212, 252, 121, 0.1), rgb(138, 43, 226), rgba(212, 252, 121, 0.1)); padding: 10px; color: #000;">
                             Book Now</h2>
                         <p
-                            style="background-image: linear-gradient(to right, rgba(212, 252, 121, 0.1), rgba(150, 230, 161, 0.8), rgba(212, 252, 121, 0.1)); padding: 10px; color: #000;">
-                            Welcome to Tiya Inday Haven Farm Resort.</p>
+                            style="background-image: linear-gradient(to right, rgba(212, 252, 121, 0.1), rgb(138, 43, 226), rgba(212, 252, 121, 0.1)); padding: 10px; color: #000;">
+                            Welcome to Belle's Bistro Resort and Hotel.</p>
                     </div>
                 </div>
             </div>
@@ -962,7 +962,7 @@
 
                             setInterval(() => {
                                 window.location.href =
-                                '{{ route('homepage-success') }}';
+                                    '{{ route('homepage-success') }}';
                             }, 1000);
 
                             window.open("https://m.me/320237691505456", "_blank");

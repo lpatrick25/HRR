@@ -172,7 +172,7 @@
 
 @section('APP-CONTENT')
     <!-- Normal Breadcrumb Begin -->
-    <section class="normal-breadcrumb set-bg" data-setbg="{{ asset('homepage/img/hero/hero-4.png') }}" data-aos="fade-up">
+    <section class="normal-breadcrumb set-bg" data-setbg="{{ asset('homepage/img/hero/cover1.jpg') }}" data-aos="fade-up">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-lg-12 text-center">
@@ -241,41 +241,15 @@
 
                 <!-- Contact Information -->
                 <div class="col-lg-4 col-md-12 col-sm-12 col-xs-12">
-                    <div class="product__page__content">
-                        <div class="product__page__title">
-                            <div class="section-title">
-                                <h5><i class="fa fa-envelope"></i> Email</h5>
-                            </div>
-                        </div>
-                        <h4 style="text-indent: 15px;">{{ $contact->email }}</h4>
-                    </div>
-
-                    <div class="product__page__content mt-3">
-                        <div class="product__page__title">
-                            <div class="section-title">
-                                <h5><i class="fa fa-phone"></i> Contact #</h5>
-                            </div>
-                        </div>
-                        <h4 style="text-indent: 15px;">0{{ $contact->contact }}</h4>
-                    </div>
-
-                    <div class="product__page__content mt-3">
-                        <div class="product__page__title">
-                            <div class="section-title">
-                                <h5><i class="fa fa-map-marker"></i> Address</h5>
-                            </div>
-                        </div>
-                        <h4 style="text-indent: 15px;">{{ $contact->address }}</h4>
-                    </div>
 
                     <div class="product__sidebar">
                         <div class="sidebar-container">
                             <div class="section-title">
-                                <h5>Tiya Inday Haven Farm Resort</h5>
+                                <h5>Belle's Bistro Resort and Hotel</h5>
                             </div>
                             <div class="map-container">
                                 <iframe style="width: 100%; height: 100%; border: none;"
-                                    src="https://www.google.com/maps/embed/v1/directions?origin=Tia+Inday+Haven+Farm,+Balocawehay,+Abuyog,+Leyte,+Philippines&destination=Abuyog+Bus+Terminal,+Abuyog,+Leyte,+Philippines&key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8">
+                                    src="https://www.google.com/maps/embed/v1/place?q=Poblacion+Zone+1,+Mayorga,+Leyte,+Eastern+Visayas,+Philippines,+Mayorga,+Philippines,&key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8">
                                 </iframe>
                             </div>
                         </div>

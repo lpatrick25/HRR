@@ -4,8 +4,8 @@
     <!-- Header -->
     <tr>
         <td style="text-align: center; background-color: #003366; padding: 20px; border-radius: 8px 8px 0 0;">
-            <img src="https://tiaindayhavenfarm.com/{{ asset('homepage/img/logo.png') }}"
-                alt="Tia Inday Haven Resort Logo" style="max-width: 120px; margin-bottom: 10px;">
+            <img src="https://www.facebook.com/p/Belles-Bistro-and-Resort-Hotel-100076196200673/?_rdr/{{ asset('homepage/img/logo.png') }}"
+                alt="Belle's Bistro Resort and Hotel Logo" style="max-width: 120px; margin-bottom: 10px;">
             <h2 style="color: #f4c430; margin: 0;">Your Exclusive Booking is Confirmed</h2>
         </td>
     </tr>
@@ -15,7 +15,7 @@
         <td
             style="background-color: #ffffff; padding: 25px; border-radius: 0 0 8px 8px; box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);">
             <p style="font-size: 16px; color: #333;"><strong>Dear {{ $transaction->customer_name }},</strong></p>
-            <p style="font-size: 14px; color: #666;">We are delighted to welcome you to Tia Inday Haven Farm Resort!
+            <p style="font-size: 14px; color: #666;">We are delighted to welcome you to Belle's Bistro Resort and Hotel!
                 Your oasis of relaxation awaits. Below are your booking details:</p>
 
             <!-- Booking Status Badge -->
@@ -82,7 +82,7 @@
             <p style="text-align: center;">
                 <a href="{{ $transaction->add_ons_link ?? '#' }}"
                     style="background-color: #f4c430; color: #003366; text-decoration: none; padding: 10px 20px; border-radius: 5px; display: inline-block; font-weight: bold;">
-                    Discover More at Tia Inday Haven
+                    Discover More at Belle's Bistro Resort and Hotel
                 </a>
             </p>
 
@@ -138,7 +138,7 @@
                     know.</p>
                 <p style="font-style: italic; text-align: center;">Sincerely,</p>
                 <p style="font-weight: bold; color: #003366; text-align: center;">Resort Manager Name</p>
-                <p style="margin: 0; font-size: 12px; text-align: center;">Resort Manager | Tia Inday Haven Farm Resort
+                <p style="margin: 0; font-size: 12px; text-align: center;">Resort Manager | Belle's Bistro Resort and Hotel
                 </p>
 
                 <p style="margin-top: 10px; text-align: center;">
@@ -149,7 +149,7 @@
                     ☎️ {{ $contact->contact }}
                 </p>
                 <p style="margin-top: 15px; text-align: center; font-size: 12px; color: #999;">
-                    &copy; {{ date('Y') }} Tia Inday Haven Farm Resort. All rights reserved.
+                    &copy; {{ date('Y') }} Belle's Bistro Resort and Hotel. All rights reserved.
                 </p>
             </div>
         </td>

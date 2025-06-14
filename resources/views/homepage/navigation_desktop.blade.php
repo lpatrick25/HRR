@@ -19,7 +19,7 @@
                                 <a href="{{ route('homepage-categories') }}">Categories <span
                                         class="arrow_carrot-down"></span></a>
                                 <ul class="dropdown">
-                                    <li><a href="{{ route('homepage-categoryKapehan') }}">Kapehan</a></li>
+                                    <li><a href="{{ route('homepage-categoryFood') }}">Restaurant</a></li>
                                     <li><a href="{{ route('homepage-categoryHotel') }}">Hotel Room</a></li>
                                     <li><a href="{{ route('homepage-categoryResort') }}">Resort Cottage</a></li>
                                 </ul>

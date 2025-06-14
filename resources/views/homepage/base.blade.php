@@ -307,7 +307,7 @@
                         Copyright &copy;
                         <script>
                             document.write(new Date().getFullYear());
-                        </script> Tia Inday Haven Farm Resort <i class="fa fa-heart"
+                        </script> Belle's Bistro Resort and Hotel <i class="fa fa-heart"
                             aria-hidden="true"></i>
                     </p>
 

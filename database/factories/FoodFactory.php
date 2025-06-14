@@ -5,6 +5,7 @@ namespace Database\Factories;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use App\Models\FoodCategory;
 use App\Models\Food;
+use Illuminate\Support\Str;
 
 class FoodFactory extends Factory
 {
@@ -34,6 +35,7 @@ class FoodFactory extends Factory
                 'Bottle',
                 'Can'
             ]),
+            'picture' => 'img/rooms/' . Str::slug($foodCategory->category_name) . '.jpg',
             'created_at' => now(),
             'updated_at' => now(),
         ];

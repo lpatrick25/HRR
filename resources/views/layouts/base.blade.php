@@ -15,17 +15,16 @@
 </head>
 
 <body>
-    <!--[if lt IE 8]>
-            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-        <![endif]-->
-    <!-- Header top area start-->
     <div class="header-top-area">
         <div class="container">
             <div class="row">
                 <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
                     <div class="admin-logo">
-                        <a href="#"><img src="{{ asset('img/logo/log.png') }}" alt="" />
+                        <a href="#">
+                            <img src="{{ asset('img/logo/log.png') }}" alt="Logo"
+                                style="height: 50px; width: auto;">
                         </a>
+
                     </div>
                 </div>
                 <div class="col-lg-5 col-md-5 col-sm-0 col-xs-12">
@@ -327,8 +326,10 @@
                         if (response) {
 
                             $('#addContactForm').find('input[id=email]').val(response.email);
-                            $('#addContactForm').find('input[id=contact]').val(response.contact);
-                            $('#addContactForm').find('textarea[id=address]').val(response.address);
+                            $('#addContactForm').find('input[id=contact]').val(response
+                            .contact);
+                            $('#addContactForm').find('textarea[id=address]').val(response
+                                .address);
 
                             $('#addContactModal').modal({
                                 backdrop: 'static',
