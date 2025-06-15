@@ -48,7 +48,7 @@ Route::prefix('/guest')->middleware('guest')->group(function () {
 
     Route::get('categories', [NavigationController::class, 'categories'])->name('homepage-categories');
 
-    Route::get('categoryKapehan', [NavigationController::class, 'categoryKapehan'])->name('homepage-categoryKapehan');
+    Route::get('categoryFood', [NavigationController::class, 'categoryFood'])->name('homepage-categoryFood');
 
     Route::get('categoryHotel', [NavigationController::class, 'categoryHotel'])->name('homepage-categoryHotel');
     Route::get('roomDetails/{id}', [NavigationController::class, 'roomDetails'])->name('homepage-roomDetails');

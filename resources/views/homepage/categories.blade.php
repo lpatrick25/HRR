@@ -255,16 +255,53 @@
                             @endforeach
                         </div>
                     </div>
+                    <div class="product__page__content">
+                        <div class="product__page__title">
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <div class="section-title">
+                                        <h4>Foods</h4>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            @foreach ($foods as $food)
+                                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 d-flex align-items-stretch"
+                                    data-aos="zoom-in" data-aos-delay="300">
+                                    <div class="card mb-4 shadow-sm w-100">
+                                        <div class="card-img-wrapper">
+                                            <img src="{{ asset($food->picture) }}" class="card-img-top lazyload"
+                                                alt="{{ $food->food_name }}" loading="lazy">
+                                        </div>
+                                        <div class="card-body d-flex flex-column">
+                                            <h5 class="card-title">{{ $food->food_name }}</h5>
+                                            <div class="mt-auto">
+                                                <a href="{{ route('homepage-categoryFood', encrypt($food->id)) }}"
+                                                    class="btn btn-primary btn-sm">
+                                                    <i class="fa fa-eye"></i> View Details
+                                                </a>
+                                                <button type="button" class="btn btn-outline-danger btn-sm"
+                                                    onclick="view_food(`{{ encrypt($food->id) }}`)">
+                                                    <i class="fa fa-search"></i> Discover More
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            @endforeach
+                        </div>
+                    </div>
                 </div>
                 <div class="col-lg-4 col-md-12 col-sm-12 col-xs-12">
                     <div class="product__sidebar">
                         <div class="sidebar-container">
                             <div class="section-title">
-                                <h5>Tiya Inday Haven Farm Resort</h5>
+                                <h5>Belle's Bistro Resort and Hotel</h5>
                             </div>
                             <div class="map-container">
                                 <iframe style="width: 100%; height: 100%; border: none;"
-                                    src="https://www.google.com/maps/embed/v1/directions?origin=Tia+Inday+Haven+Farm,+Balocawehay,+Abuyog,+Leyte,+Philippines&destination=Abuyog+Bus+Terminal,+Abuyog,+Leyte,+Philippines&key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8">
+                                    src="https://www.google.com/maps/embed/v1/place?q=Poblacion+Zone+1,+Mayorga,+Leyte,+Eastern+Visayas,+Philippines,+Mayorga,+Philippines,&key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8">
                                 </iframe>
                             </div>
                         </div>

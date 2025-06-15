@@ -3,12 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="description" content="Resort Reservation">
-    <meta name="keywords" content="Tia Inday, Valida, resort, abuyog">
+    <meta name="keywords" content="Belle's Bistro, Mayorga, resort and hotel">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Tia Inday Haven Farm Resort | @yield('APP-TITLE')</title>
-    <link rel="shortcut icon" type="image/png" href="{{ asset('homepage/img/logo.png') }}">
+    <title>Belle's Bistro Resort & Hotel | @yield('APP-TITLE')</title>
+    <link rel="shortcut icon" type="image/png" href="{{ asset('homepage/img/logo1.png') }}">
+    <link rel="shortcut icon" type="image/png" href="{{ asset('homepage/img/logo.jpg') }}">
     <meta name="csrf-token" content="{{ csrf_token() }}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
 
     <!-- Google Font -->
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -33,8 +35,9 @@
         .header,
         .footer,
         #preloder {
-            background-image: linear-gradient(to right, rgb(225, 253, 214), rgb(181, 255, 239), rgb(181, 255, 239));
+            background-image: linear-gradient(to right, rgb(230, 220, 255), rgb(200, 160, 255), rgb(180, 140, 255));
         }
+
 
         .mapouter,
         .gmap_canvas {
@@ -66,7 +69,7 @@
             top: -6px;
             height: 0;
             width: 0;
-            background: #f80000;
+            background: #9400D3;
             content: "";
         }
 
@@ -80,7 +83,7 @@
             width: 40%;
             border: 0;
             height: 2px;
-            background-image: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(248, 0, 0, 1), rgba(255, 255, 255, 0));
+            background-image: linear-gradient(to right, rgba(255, 255, 255, 0), rgb(148, 0, 211), rgba(255, 255, 255, 0));
         }
 
         .product__item_details {
@@ -99,11 +102,11 @@
 
         /* Header & Footer */
         .header {
-            border-bottom: 1px solid #f80000;
+            border-bottom: 1px solid #9400D3;
         }
 
         .footer {
-            border-top: 1px solid #f80000;
+            border-top: 1px solid #9400D3;
         }
 
         .header__menu ul li a,
@@ -116,17 +119,17 @@
         .resort__details__text p,
         .resort__details__widget ul li,
         .resort__details__widget ul li span {
-            color: #000;
+            color: #9400D3;
         }
 
         .header__menu ul li.active a {
-            background: #f80000;
+            background: #9400D3;
             color: #fff;
         }
 
         .header__menu ul li a:hover,
         .breadcrumb__links a i {
-            color: #f80000;
+            color: #9400D3;
         }
 
         .header__menu ul li.active:hover a:hover {
@@ -134,7 +137,7 @@
         }
 
         .header__right a {
-            color: #f80000;
+            color: #9400D3;
         }
 
         /* Buttons & Links */
@@ -144,7 +147,7 @@
         .resort__details__btn .follow-btn,
         .resort__details__form form button,
         .product__sidebar__view__item .ep {
-            background: #f80000;
+            background: #9400D3;
             color: #fff;
         }
 
@@ -155,7 +158,7 @@
         }
 
         .hero__slider.owl-carousel .owl-nav button::after {
-            background: #f80000;
+            background: #9400D3;
         }
 
         /* Forms */
@@ -291,8 +294,10 @@
                     <div class="footer__nav">
                         <ul>
                             <li class="@yield('active-homepage')"><a href="{{ route('homepage-homepage') }}">Homepage</a></li>
-                            <li class="@yield('active-categories')"><a href="{{ route('homepage-categories') }}">Categories</a></li>
-                            <li class="@yield('active-experience')"><a href="{{ route('homepage-experience') }}">Experience</a></li>
+                            <li class="@yield('active-categories')"><a href="{{ route('homepage-categories') }}">Categories</a>
+                            </li>
+                            <li class="@yield('active-experience')"><a href="{{ route('homepage-experience') }}">Experience</a>
+                            </li>
                             <li class="@yield('active-contact')"><a href="{{ route('homepage-contact') }}">Contacts</a></li>
                         </ul>
                     </div>
@@ -302,7 +307,7 @@
                         Copyright &copy;
                         <script>
                             document.write(new Date().getFullYear());
-                        </script> Tia Inday Haven Farm Resort <i class="fa fa-heart"
+                        </script> Belle's Bistro Resort and Hotel <i class="fa fa-heart"
                             aria-hidden="true"></i>
                     </p>
 

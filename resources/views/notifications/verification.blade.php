@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Welcome & Verify Your Email - Tia Inday Haven Resort</title>
+    <title>Welcome & Verify Your Email - Belle's Bistro Resort and Hotel</title>
     <style>
         body {
             font-family: 'Georgia', serif;
@@ -56,7 +56,8 @@
             line-height: 1.6;
         }
 
-        .verify-button, .explore-button {
+        .verify-button,
+        .explore-button {
             display: inline-block;
             background-color: #f4c430;
             color: #003366;
@@ -69,7 +70,8 @@
             box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
         }
 
-        .verify-button:hover, .explore-button:hover {
+        .verify-button:hover,
+        .explore-button:hover {
             background-color: #003366;
             color: #f4c430;
         }
@@ -107,8 +109,8 @@
         <!-- Header -->
         <tr>
             <td class="header">
-                <img src="https://tiaindayhavenfarm.com/homepage/img/logo.png" alt="Tia Inday Haven Resort Logo">
-                <h2>Welcome to Tia Inday Haven Resort!</h2>
+                <img src="https://www.facebook.com/p/Belles-Bistro-and-Resort-Hotel-100076196200673/?_rdr/homepage/img/logo.png" alt="Belle's Bistro Resort and Hotel Logo">
+                <h2>Welcome to Belle's Bistro Resort and Hotel</h2>
             </td>
         </tr>
 
@@ -116,9 +118,11 @@
         <tr>
             <td class="content">
                 <p><strong>Hello {{ ucfirst($user->first_name) }} {{ ucfirst($user->last_name) }},</strong></p>
-                <p>We are delighted to welcome you to <strong>Tia Inday Haven Resort</strong>! 🌿 Your relaxing escape begins here.</p>
+                <p>We are delighted to welcome you to <strong>Belle's Bistro Resort and Hotel</strong>! 🌿 Your relaxing escape
+                    begins here.</p>
 
-                <p>Before you enjoy exclusive perks and updates, please confirm your email by clicking the button below:</p>
+                <p>Before you enjoy exclusive perks and updates, please confirm your email by clicking the button below:
+                </p>
 
                 <p>
                     @php
@@ -139,22 +143,24 @@
 
                 <hr style="border: 1px solid #ddd;">
 
-                <h4 style="border-bottom: 2px solid #003366; padding-bottom: 5px; color: #003366;">What You Can Look Forward To:</h4>
+                <h4 style="border-bottom: 2px solid #003366; padding-bottom: 5px; color: #003366;">What You Can Look
+                    Forward To:</h4>
                 <p>✅ First access to seasonal promotions</p>
                 <p>✅ Special discounts on accommodations & events</p>
                 <p>✅ Insider updates on new resort features</p>
 
                 <hr style="border: 1px solid #ddd;">
 
-                <h4 style="border-bottom: 2px solid #003366; padding-bottom: 5px; color: #003366;">Discover Your Getaway</h4>
+                <h4 style="border-bottom: 2px solid #003366; padding-bottom: 5px; color: #003366;">Discover Your Getaway
+                </h4>
                 <p>🏡 Stay in our cozy cottages with a breathtaking farm view.</p>
                 <p>☕ Savor freshly brewed coffee at <strong>Kapehan sa Bukid</strong>.</p>
                 <p>🏊 Enjoy a refreshing swim in our private pools.</p>
                 <p>🎉 Celebrate life’s moments in our event spaces.</p>
 
                 <p style="text-align: center;">
-                    <a href="https://tiaindayhavenfarm.com" class="explore-button">
-                        Explore Tia Inday Haven
+                    <a href="https://www.facebook.com/p/Belles-Bistro-and-Resort-Hotel-100076196200673/?_rdr" class="explore-button">
+                        Explore B
                     </a>
                 </p>
 
@@ -171,13 +177,13 @@
         <!-- Footer -->
         <tr>
             <td class="footer">
-                <p>Need help? <a href="mailto:support@tiaindayhavenfarm.com">Contact Support</a></p>
-                <p>📍 <a href="https://maps.app.goo.gl/zb3kLxuLbT8ANifbA">Find Us</a> |
-                    📧 <a href="mailto:support@tiaindayhavenfarm.com">Email Support</a> |
+                <p>Need help? <a >Contact Support</a></p>
+                <p>📍 <a href="https://www.google.com/maps/embed/v1/place?q=Poblacion+Zone+1,+Mayorga,+Leyte,+Eastern+Visayas,+Philippines,+Mayorga,+Philippines,&key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8">Find Us</a> |
+                    📧 <a href="https://www.facebook.com/p/Belles-Bistro-and-Resort-Hotel-100076196200673/?_rdr">Facebook Page</a> |
                     ☎️ +1 234 567 8900
                 </p>
                 <p class="disclaimer">
-                    &copy; {{ date('Y') }} Tia Inday Haven Farm Resort. All rights reserved.
+                    &copy; {{ date('Y') }} Belle's Bistro Resort and Hotel. All rights reserved.
                 </p>
             </td>
         </tr>
