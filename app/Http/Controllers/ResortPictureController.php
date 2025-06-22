@@ -41,14 +41,14 @@ class ResortPictureController extends Controller
 
             $validated = $request->validate([
                 'resort_cottage_id' => 'required|exists:resort_cottages,id',
-                'picture' => 'required|file|image|mimes:jpeg,png,jpg,gif|max:5120', // 5MB Max
+                'picture' => 'required|file|image|mimes:jpeg,png,jpg,gif|max:20480', // 20MB Max
             ], [
                 'resort_cottage_id.required' => 'Cottage is required.',
                 'resort_cottage_id.exists' => 'Selected cottage does not exist.',
                 'picture.required' => 'Picture is required.',
                 'picture.image' => 'Uploaded file must be an image.',
                 'picture.mimes' => 'Picture must be a file of type: jpeg, png, jpg, gif.',
-                'picture.max' => 'Picture must not exceed 5MB.',
+                'picture.max' => 'Picture must not exceed 20MB.',
             ]);
 
             // Handle image upload

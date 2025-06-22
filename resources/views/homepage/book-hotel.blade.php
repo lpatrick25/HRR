@@ -960,12 +960,7 @@
                             $('#bookingForm').trigger('reset');
                             showSuccessMessage(response.msg);
 
-                            setInterval(() => {
-                                window.location.href =
-                                    '{{ route('homepage-success') }}';
-                            }, 1000);
-
-                            window.open("https://m.me/320237691505456", "_blank");
+                            window.open(`/guest/${transactionNumber}/paymentHotel`, "_blank");
 
                             // Reset stepper to initial step
                             currentStepAdd = 1;

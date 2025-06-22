@@ -203,7 +203,7 @@
                             Book Now</h2>
                         <p
                             style="background-image: linear-gradient(to right, rgba(212, 252, 121, 0.1),  rgb(138, 43, 226), rgba(212, 252, 121, 0.1)); padding: 10px; color: #000;">
-                            Welcome to Tiya Inday Haven Farm Resort.</p>
+                            Welcome to Belle's Bistro Resort and Hotel.</p>
                     </div>
                 </div>
             </div>
@@ -933,12 +933,7 @@
                             $('#bookingForm').trigger('reset');
                             showSuccessMessage(response.msg);
 
-                            setInterval(() => {
-                                window.location.href =
-                                    '{{ route('homepage-success') }}';
-                            }, 1000);
-
-                            window.open("https://m.me/320237691505456", "_blank");
+                            window.open(`/guest/${transactionNumber}/payment`, "_blank");
 
                             // Reset stepper to initial step
                             currentStepAdd = 1;

@@ -21,7 +21,7 @@ class FoodPictureController extends Controller
 
             return [
                 'count' => $index + 1,
-                'room_name' => $picture->Food->food_name ?? 'N/A',
+                'food_name' => $picture->Food->food_name ?? 'N/A',
                 'picture' => $picture->picture,
                 'action' => $action,
             ];
@@ -63,7 +63,7 @@ class FoodPictureController extends Controller
             $foodId = $request->food_id;
             $imageFile = $request->file('picture');
 
-            $uploadPath = 'uploads/hotel_pictures/' . $foodId; // public/uploads/hotel_pictures/{hotel_room_id}
+            $uploadPath = 'uploads/food_pictures/' . $foodId; // public/uploads/hotel_pictures/{hotel_room_id}
             $fileName = time() . '_' . $imageFile->getClientOriginalName();
             $imageFile->move(public_path($uploadPath), $fileName);
 

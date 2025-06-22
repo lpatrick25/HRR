@@ -42,7 +42,7 @@
                                     <a href="#">{{ auth()->user()->first_name }}
                                         {{ auth()->user()->last_name }}<span class="arrow_carrot-down"></span></a>
                                     <ul class="dropdown">
-                                        @if (in_array(auth()->user()->user_role, ['Owner', 'Front Desk - Hotel', 'Front Desk - Resort']))
+                                        @if (in_array(auth()->user()->user_role, ['Owner', 'Front Desk - Hotel', 'Front Desk - Resort', 'Front Desk - Food']))
                                             <li><a href="{{ route('owner-dashboard') }}">Dashboard</a></li>
                                         @else
                                             {{-- <li><a href="#">My Reservation</a></li> --}}

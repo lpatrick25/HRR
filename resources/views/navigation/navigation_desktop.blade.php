@@ -59,6 +59,20 @@
                                 Management</a>
                         </li>
                     @endif
+                    @if (auth()->user()->user_role === 'Front Desk - Food')
+                        {{--  --}}
+                        <li class="@yield('active_home')">
+                            <a href="{{ route('food-dashboard') }}"><i class="fa fa-home"></i> Home</a>
+                        </li>
+                        <li class="@yield('active_transactions')">
+                            <a data-toggle="tab" href="#tab_transactions"><i class="fa fa-exchange"></i>
+                                Transactions</a>
+                        </li>
+                        <li class="@yield('active_resort')">
+                            <a href="{{ route('food-foodManagement') }}"><i class="fa fa-sun-o"></i> Food
+                                Management</a>
+                        </li>
+                    @endif
                     @if (auth()->user()->user_role === 'Admin')
                         {{--  --}}
                         <li class="@yield('active_home')">
@@ -90,7 +104,8 @@
                                         Transaction</a></li>
                             @endif
                             @if (auth()->user()->user_role === 'Front Desk - Resort')
-                                <li><a href="{{ route('resort-resortTransactions') }}"><i class="fa fa-tree"></i> Resort
+                                <li><a href="{{ route('resort-resortTransactions') }}"><i class="fa fa-tree"></i>
+                                        Resort
                                         Transaction</a></li>
                                 {{--  --}}
                             @endif

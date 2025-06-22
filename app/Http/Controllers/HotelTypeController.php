@@ -19,7 +19,7 @@ class HotelTypeController extends Controller
             $actionUpdate = '<button onclick="view_type(' . "'" . $type->id . "'" . ')" type="button" title="Update" class="btn btn-custon-rounded-three btn-primary"><i class="fa fa-edit"></i></button>';
             $actionDelete = '<button onclick="trash_type(' . "'" . $type->id . "'" . ')" type="button" title="Delete" class="btn btn-custon-rounded-three btn-danger"><i class="fa fa-trash"></i></button>';
             $action = $actionUpdate . $actionDelete;
-
+            
             return [
                 'count' => $index + 1,
                 'type_name' => ucwords(strtolower($type->type_name)),

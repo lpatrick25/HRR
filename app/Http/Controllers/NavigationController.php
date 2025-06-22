@@ -48,13 +48,16 @@ class NavigationController extends Controller
     {
         $hotelRooms = HotelRoom::with('pictures')->get();
         $resortCottages = ResortCottage::with('pictures')->get();
-        return view('homepage.categories', compact('hotelRooms', 'resortCottages'));
+        $foods = Food::with('pictures')->get();
+        return view('homepage.categories', compact('hotelRooms', 'resortCottages', 'foods'));
     }
 
     public function categoryFood()
     {
+        $categories = FoodCategory::all();
+        $foodcat = Food::with('category')->get();
         $foods = Food::with('pictures')->get();
-        return view('homepage.food', compact('foods'));
+        return view('homepage.food', compact('foods', 'categories', 'foodcat'));
     }
 
     public function categoryHotel()
@@ -535,6 +538,11 @@ class NavigationController extends Controller
     {
         $foodCategories = FoodCategory::all();
         return view('food.index', compact('foodCategories'));
+    }
+    public function restoFoodInfo($food_id)
+    {
+        $foodInfo = Food::with('pictures')->findOrFail($food_id);
+        return view('food.info', compact('foodInfo'));
     }
 
     public function hotelTransactions()

@@ -108,7 +108,7 @@
                         <h4>Email Verified Successfully!</h4>
                         <p>Thank you for confirming your email, <strong>{{ ucfirst($user->first_name) }} {{ ucfirst($user->last_name) }}</strong>!</p>
                         <p>Your account is now active, and you're all set to explore the exclusive experiences at
-                            <strong>Tia Inday Haven Resort</strong>.</p>
+                            <strong>Belle's Bistro Resort and Hotel</strong>.</p>
 
                         <p class="mt-3">Get started by exploring our stunning accommodations and amenities:</p>
                         <a href="{{ route('homepage-homepage') }}" class="btn-primary-custom">Explore Resort</a>
@@ -121,7 +121,7 @@
                         <h5><i class="fa fa-map-marker"></i> Visit Us</h5>
                         <div class="map-container">
                             <iframe
-                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3932.002580437633!2d124.9486105111568!3d10.714001190019339!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3307bb8936174b07%3A0x955e002eea10fcd!2sTia%20Inday%20Haven%20Farm!5e0!3m2!1sen!2sph!4v{{ time() }} "
+                                src="https://www.google.com/maps/embed/v1/place?q=Poblacion+Zone+1,+Mayorga,+Leyte,+Eastern+Visayas,+Philippines,+Mayorga,+Philippines,&key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8"
                                 width="100%" height="300" style="border: 0; border-radius: 10px;" allowfullscreen
                                 loading="lazy">
                             </iframe>

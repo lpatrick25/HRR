@@ -249,8 +249,8 @@
                     <div class="breadcrumb__links">
                         <a href="{{ route('homepage-homepage') }}"><i class="fa fa-home"></i> Home</a>
                         <a href="{{ route('homepage-categories') }}">Categories</a>
-                        <a href="{{ route('homepage-categoryFood') }}">Hotel Room Category</a>
-                        <span>{{ $room->room_name }}</span>
+                        <a href="{{ route('homepage-categoryFood') }}">Hotel Food Category</a>
+                        <span>{{ $food->food_name }}</span>
                     </div>
                 </div>
             </div>
