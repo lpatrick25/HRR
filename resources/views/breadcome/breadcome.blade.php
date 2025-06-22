@@ -7,6 +7,9 @@
                         <h2>@yield('APP_TITLE')</h2>
                     </div>
                     <ul class="breadcome-menu">
+                        <li><a href="javascript:void(0);" onclick="history.back();">Back</a> <span
+                            class="bread-slash">/</span></li>
+                    </li>
                         <li><a href="#">Home</a> <span class="bread-slash">/</span>
                         </li>
                         <li><span class="bread-blod">@yield('APP_TITLE')</span>

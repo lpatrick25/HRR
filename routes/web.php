@@ -6,6 +6,7 @@ use App\Http\Controllers\ContactController;
 use App\Http\Controllers\ContactInquiryController;
 use App\Http\Controllers\FoodCategoryController;
 use App\Http\Controllers\FoodController;
+use App\Http\Controllers\FoodPictureController;
 use App\Http\Controllers\HotelAmenityController;
 use App\Http\Controllers\HotelPaymentController;
 use App\Http\Controllers\HotelPictureController;
@@ -15,6 +16,8 @@ use App\Http\Controllers\HotelRoomController;
 use App\Http\Controllers\HotelTransactionController;
 use App\Http\Controllers\HotelTypeController;
 use App\Http\Controllers\NavigationController;
+use App\Http\Controllers\Payment\CottagePaymentController;
+use App\Http\Controllers\Payment\RoomPaymentController;
 use App\Http\Controllers\ResortCottageController;
 use App\Http\Controllers\ResortPaymentController;
 use App\Http\Controllers\ResortPictureController;
@@ -81,6 +84,12 @@ Route::prefix('/guest')->middleware('guest')->group(function () {
     // Route::get('chatbot/response', [ChatbotController::class, 'getResponse'])->name('chatbot-getResponse');
     Route::post('chatbot/response', [ChatbotController::class, 'getResponse'])->name('chatbot-getResponse');
 
+    //Payment Cottage Page
+    Route::get('{transactionNumber}/paymentResort', [CottagePaymentController::class, 'cottagePayment'])->name('cottagePayment');
+    Route::get('{transactionNumber}/paymentHotel', [RoomPaymentController::class, 'roomPayment'])->name('roomPayment');
+    Route::get('successBookingCottage/{transactionNumber}', [CottagePaymentController::class, 'successBookingCottage'])->name('successBookingCottage');
+    Route::get('successBookingRoom/{transactionNumber}', [RoomPaymentController::class, 'successBookingRoom'])->name('successBookingRoom');
+
     // Thank You Message
     Route::get('success', [NavigationController::class, 'success'])->name('homepage-success');
 });
@@ -122,6 +131,7 @@ Route::prefix('owner')->middleware('user')->group(function () {
     // Info
     Route::get('{roomID}/roomInfo', [NavigationController::class, 'hotelRoomInfo'])->name('owner-hotelRoomInfo');
     Route::get('{cottageID}/cottageInfo', [NavigationController::class, 'resortCottageInfo'])->name('owner-resortCottageInfo');
+    Route::get('{foodID}/foodInfo', [NavigationController::class, 'restoFoodInfo'])->name('owner-restoFoodInfo');
 
     // Messages
     Route::get('contactInquiries', [NavigationController::class, 'contactInquiries'])->name('owner-contactInquiries');
@@ -147,20 +157,20 @@ Route::prefix('resort')->middleware('user')->group(function () {
     //Dashboard
     Route::get('dashboard', [NavigationController::class, 'dashboard'])->name('resort-dashboard');
     // Management
-    Route::get('hotelManagement', [NavigationController::class, 'hotelManagement'])->name('resort-hotelManagement');
+    Route::get('resortManagement', [NavigationController::class, 'resortManagement'])->name('resort-resortManagement');
 
     // Transactions
     Route::get('resortTransactions', [NavigationController::class, 'resortTransactions'])->name('resort-resortTransactions');
 
     // Billings
-    Route::get('hotelBillings', [NavigationController::class, 'hotelBillings'])->name('resort-hotelBillings');
+    Route::get('resortBillings', [NavigationController::class, 'resortBillings'])->name('resort-resortBillings');
 });
 
 Route::prefix('food')->middleware('user')->group(function () {
     //Dashboard
     Route::get('dashboard', [NavigationController::class, 'dashboard'])->name('food-dashboard');
     // Management
-    Route::get('hotelManagement', [NavigationController::class, 'hotelManagement'])->name('food-hotelManagement');
+    Route::get('foodManagement', [NavigationController::class, 'foodManagement'])->name('food-foodManagement');
 
     // Transactions
     Route::get('foodTransactions', [NavigationController::class, 'foodTransactions'])->name('food-foodTransactions');
@@ -188,6 +198,8 @@ Route::post('resortCottages/cottagePicture', [ResortCottageController::class, 'c
 Route::get('foodCategories/getAll', [FoodCategoryController::class, 'getAll']);
 Route::resource('foodCategories', FoodCategoryController::class);
 Route::resource('foods', FoodController::class);
+Route::resource('foodPictures', FoodPictureController::class);
+Route::post('foods/foodPicture', [FoodController::class, 'foodPicture']);
 
 // Hotel Reservation
 Route::get('getAvailableRooms', [HotelReservationController::class, 'getAvailableRooms'])->name('getAvailableRooms');
@@ -243,7 +255,7 @@ Route::put('updatePassword', [NavigationController::class, 'updatePassword'])->n
 Route::get('{type}-types', [AnalyticsController::class, 'getTypes'])->name('getTypes');
 Route::get('analytics/views', [AnalyticsController::class, 'getViewsByCategory'])->name('getViewsByCategory');
 
-Route::get('/clear-cache', function() {
+Route::get('/clear-cache', function () {
     Artisan::call('optimize:clear'); // Clears cache, config, route, and view cache
     return "Cache cleared successfully!";
 });

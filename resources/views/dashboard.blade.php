@@ -11,6 +11,7 @@
         $isOwner = $userRole === 'Owner';
         $isFrontDeskHotel = $userRole === 'Front Desk - Hotel';
         $isFrontDeskResort = $userRole === 'Front Desk - Resort';
+        $isFrontDeskFood = $userRole === 'Front Desk - Food';
     @endphp
 
     <div class="row">
@@ -20,10 +21,13 @@
                 @if ($isOwner)
                     <option value="hotel">Hotel</option>
                     <option value="resort">Resort</option>
+                    <option value="food">Food</option>
                 @elseif($isFrontDeskHotel)
                     <option value="hotel" selected>Hotel</option>
                 @elseif($isFrontDeskResort)
                     <option value="resort" selected>Resort</option>
+                @elseif($isFrontDeskFood)
+                    <option value="food" selected>Food</option>
                 @endif
             </select>
         </div>
@@ -57,7 +61,8 @@
             const userRole = @json(Auth::user()->user_role);
 
             // If user is not Owner, disable the viewType dropdown
-            if (userRole === "Front Desk - Hotel" || userRole === "Front Desk - Resort") {
+            if (userRole === "Front Desk - Hotel" || userRole === "Front Desk - Resort" || userRole ===
+                "Front Desk - Food") {
                 $("#viewType").prop("disabled", true);
             }
 
@@ -94,7 +99,7 @@
                         return;
                     }
 
-                    const labels = data.map(item => item.room_name || item.cottage_name);
+                    const labels = data.map(item => item.room_name || item.cottage_name || item.food_name);
                     const viewCounts = data.map(item => item.views_count);
 
                     if (chartInstance) chartInstance.destroy();

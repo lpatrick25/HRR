@@ -591,7 +591,7 @@
                     $('.customer_email_error').show();
                     valid = false;
                 } else {
-                    $('.customer_email_error').hide();
+                    $('.customer_email_error').hide();  
                 }
 
                 // Customer Number Validation

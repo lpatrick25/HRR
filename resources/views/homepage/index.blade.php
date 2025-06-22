@@ -443,7 +443,7 @@
 
 
                             </p>
-                            <a href="{{ route('homepage-categoryResort') }}" class="btn btn-dark btn-sm">Discover More</a>
+                            <a href="{{ route('homepage-categoryFood') }}" class="btn btn-dark btn-sm">Discover More</a>
                         </div>
                     </div>
                 </div>

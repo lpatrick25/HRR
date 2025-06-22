@@ -35,4 +35,11 @@ class Food extends Model
 
         return $this->hasMany(FoodPicture::class);
     }
+    // Food.php
+    public function category()
+    {
+        return $this->belongsTo(FoodCategory::class, 'category_id');
+    }
+
+
 }

@@ -28,7 +28,7 @@ html,
 body {
     font-family: 'Open Sans', sans-serif;
     font-weight: 400;
-    background: #03a9f0
+    background: rgb(180, 140, 255);
 }
 
 .floatleft {

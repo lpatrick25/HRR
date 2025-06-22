@@ -35,9 +35,9 @@
                             <li class="nav-item"><a href="{{ route('owner-contactInquiries') }}"
                                     class="nav-link">Messages</a>
                             </li>
-                            <li class="nav-item"><a href="{{ route('owner-seasonalPromos') }}"
+                            {{-- <li class="nav-item"><a href="{{ route('owner-seasonalPromos') }}"
                                     class="nav-link">Promo(s)</a>
-                            </li>
+                            </li> --}}
                             <li class="nav-item"><a href="#" class="nav-link" id="view-contact">Contact</a></li>
                         </ul>
                     </div>
@@ -142,8 +142,7 @@
                                 </div>
                                 <div class="form-group">
                                     <label><i class="fa fa-user"></i> Last Name</label>
-                                    <input type="text" class="form-control" id="lastName" name="last_name"
-                                        required>
+                                    <input type="text" class="form-control" id="lastName" name="last_name" required>
                                 </div>
                                 <div class="form-group">
                                     <label><i class="fa fa-envelope"></i> Email</label>
@@ -327,7 +326,7 @@
 
                             $('#addContactForm').find('input[id=email]').val(response.email);
                             $('#addContactForm').find('input[id=contact]').val(response
-                            .contact);
+                                .contact);
                             $('#addContactForm').find('textarea[id=address]').val(response
                                 .address);
 

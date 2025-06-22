@@ -39,10 +39,15 @@ class UserRole
                 return redirect()->route('owner-dashboard');
             } elseif ($role === 'Admin' && !$request->is('admin/*')) {
                 return redirect()->route('admin-dashboard');
+
             } elseif ($role === 'Front Desk - Hotel' && !$request->is('hotel/*')) {
                 return redirect()->route('hotel-dashboard');
+
             } elseif ($role === 'Front Desk - Resort' && !$request->is('resort/*')) {
                 return redirect()->route('resort-dashboard');
+                
+            } elseif ($role === 'Front Desk - Food' && !$request->is('food/*')) {
+                return redirect()->route('food-dashboard');
             }
             // elseif ($role === 'Customer' && !$request->is('guest/*')) {
             //     return redirect()->route('homepage-homepage');
