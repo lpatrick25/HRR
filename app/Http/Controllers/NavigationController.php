@@ -2,12 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Controllers\Order\FoodOrderController;
 use App\Mail\NewsletterSubscriptionMail;
 use App\Models\Contact;
 use App\Models\ContactInquiry;
 use App\Models\Food;
 use App\Models\FoodCategory;
 use App\Models\FoodPicture;
+use App\Models\FoodTransaction;
 use App\Models\HotelReview;
 use App\Models\HotelRoom;
 use App\Models\HotelTransaction;
@@ -58,6 +60,19 @@ class NavigationController extends Controller
         $foodcat = Food::with('category')->get();
         $foods = Food::with('pictures')->get();
         return view('homepage.food', compact('foods', 'categories', 'foodcat'));
+    }
+
+    public function foodOrder(Request $request)
+    {
+        $categories = FoodCategory::all();
+        $selectedCategory = $request->query('category_id');
+
+        $foods = Food::when($selectedCategory, function ($query, $selectedCategory) {
+            return $query->where('food_category_id', $selectedCategory);
+        })->where('food_status', 'Available')->get();
+
+        $cart = session()->get('cart', []);
+        return view('homepage.foodorder', compact('categories', 'foods', 'selectedCategory', 'cart'));
     }
 
     public function categoryHotel()
@@ -545,6 +560,46 @@ class NavigationController extends Controller
         return view('food.info', compact('foodInfo'));
     }
 
+    public function getFoodOrderDetails(Request $request)
+    {
+        try {
+            $transaction = FoodTransaction::with(['food.foodCategory'])
+                ->where('customer_name', $request->search_name)
+                ->where('customer_email', $request->search_email)
+                ->where('customer_number', $request->search_number)
+                ->firstOrFail();
+
+            $transactions = FoodTransaction::with(['food.foodCategory'])
+                ->where('transaction_number', $transaction->transaction_number)
+                ->get();
+
+            $totalAmount = $transactions->sum('total_amount');
+
+            return response()->json([
+                'transaction_number' => $transaction->transaction_number,
+                'customer_name' => $transaction->customer_name,
+                'customer_email' => $transaction->customer_email,
+                'customer_number' => $transaction->customer_number,
+                'reservation_date' => $transaction->reservation_date->format('l, F j, Y'),
+                'total_amount' => $totalAmount,
+                'status' => $transaction->status,
+                'foods' => $transactions->map(function ($trans) {
+                    return [
+                        'food_name' => $trans->food->food_name,
+                        'food_price' => $trans->food->food_price,
+                        'quantity' => $trans->quantity,
+                        'unit' => $trans->food->food_unit,
+                        'category' => [
+                            'category_name' => $trans->food->foodCategory->category_name,
+                        ],
+                    ];
+                })->toArray(),
+            ]);
+        } catch (ModelNotFoundException $e) {
+            return response()->json(['msg' => 'Order not found. Please check your details and try again.'], 404);
+        }
+    }
+
     public function hotelTransactions()
     {
         return view('transactions.hotel');
@@ -557,7 +612,8 @@ class NavigationController extends Controller
 
     public function foodTransactions()
     {
-        return view('transactions.food');
+        $categories = FoodCategory::all();
+        return view('transactions.food', compact('categories'));
     }
 
     public function hotelBillings()

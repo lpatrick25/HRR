@@ -933,7 +933,7 @@
                             $('#bookingForm').trigger('reset');
                             showSuccessMessage(response.msg);
 
-                            window.open(`/guest/${transactionNumber}/payment`, "_blank");
+                            window.open(`/guest/${transactionNumber}/paymentResort`, "_blank");
 
                             // Reset stepper to initial step
                             currentStepAdd = 1;

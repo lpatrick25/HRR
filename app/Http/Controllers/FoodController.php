@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Food;
+use App\Models\FoodCategory;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Log;
@@ -142,6 +143,11 @@ class FoodController extends Controller
     /**
      * Update the specified resource in storage.
      */
+    public function transactions()
+    {
+        $categories = FoodCategory::all();
+        return view('food.transactions', compact('categories'));
+    }
     public function update(Request $request, $id)
     {
         // Start transaction

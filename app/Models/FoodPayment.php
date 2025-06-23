@@ -12,6 +12,7 @@ class FoodPayment extends Model
     protected $fillable = [
         'food_transaction_id',
         'payment_method',
+        'total_amount',
         'amount_paid',
         'checkout_session_id'
     ];

@@ -16,8 +16,13 @@ use App\Http\Controllers\HotelRoomController;
 use App\Http\Controllers\HotelTransactionController;
 use App\Http\Controllers\HotelTypeController;
 use App\Http\Controllers\NavigationController;
+use App\Http\Controllers\Order\FoodOrderController;
 use App\Http\Controllers\Payment\CottagePaymentController;
+use App\Http\Controllers\Payment\FoodPaymentController;
 use App\Http\Controllers\Payment\RoomPaymentController;
+use App\Http\Controllers\Reports\FoodReportController;
+use App\Http\Controllers\Reports\HotelReportController;
+use App\Http\Controllers\Reports\ResortReportController;
 use App\Http\Controllers\ResortCottageController;
 use App\Http\Controllers\ResortPaymentController;
 use App\Http\Controllers\ResortPictureController;
@@ -79,6 +84,14 @@ Route::prefix('/guest')->middleware('guest')->group(function () {
 
     Route::get('contact', [NavigationController::class, 'contact'])->name('homepage-contact');
 
+    // foodorder
+    Route::get('foodOrder', [NavigationController::class, 'foodOrder'])->name('homepage-foodOrder');
+    Route::get('/food', [FoodOrderController::class, 'index'])->name('food.index');
+    Route::post('/food/add-to-cart', [FoodOrderController::class, 'addToCart'])->name('food.add-to-cart');
+    Route::post('/food/update-cart', [FoodOrderController::class, 'updateCart'])->name('food.update-cart');
+    Route::get('/food/checkout', [FoodOrderController::class, 'checkout'])->name('food.checkout');
+    Route::post('/food/order', [FoodOrderController::class, 'storeOrder'])->name('food.order');
+
     Route::get('login', [NavigationController::class, 'login'])->name('homepage-login')->middleware('guest');
 
     // Route::get('chatbot/response', [ChatbotController::class, 'getResponse'])->name('chatbot-getResponse');
@@ -86,9 +99,11 @@ Route::prefix('/guest')->middleware('guest')->group(function () {
 
     //Payment Cottage Page
     Route::get('{transactionNumber}/paymentResort', [CottagePaymentController::class, 'cottagePayment'])->name('cottagePayment');
-    Route::get('{transactionNumber}/paymentHotel', [RoomPaymentController::class, 'roomPayment'])->name('roomPayment');
     Route::get('successBookingCottage/{transactionNumber}', [CottagePaymentController::class, 'successBookingCottage'])->name('successBookingCottage');
+    Route::get('{transactionNumber}/paymentHotel', [RoomPaymentController::class, 'roomPayment'])->name('roomPayment');
     Route::get('successBookingRoom/{transactionNumber}', [RoomPaymentController::class, 'successBookingRoom'])->name('successBookingRoom');
+    Route::get('{transactionNumber}/paymentFood', [FoodPaymentController::class, 'foodPayment'])->name('foodPayment');
+    Route::get('successFoodOrder/{transactionNumber}', [FoodPaymentController::class, 'successFoodOrder'])->name('successFoodOrder');
 
     // Thank You Message
     Route::get('success', [NavigationController::class, 'success'])->name('homepage-success');
@@ -213,6 +228,7 @@ Route::get('getCottageAvailability', [ResortReservationController::class, 'getCo
 Route::get('transactionsResort/count', [ResortReservationController::class, 'getResortTransactionCount'])->name('getResortTransactionCount');
 Route::put('reservationResortStatus', [ResortReservationController::class, 'reservationResortStatus'])->name('reservationResortStatus');
 
+
 // Hotel Transaction
 Route::resource('hotelTransactions', HotelTransactionController::class);
 
@@ -258,4 +274,11 @@ Route::get('analytics/views', [AnalyticsController::class, 'getViewsByCategory']
 Route::get('/clear-cache', function () {
     Artisan::call('optimize:clear'); // Clears cache, config, route, and view cache
     return "Cache cleared successfully!";
+});
+
+// Hotel Reports
+Route::prefix('resorts')->group(function () {
+    Route::get('/reports', [ResortReportController::class, 'index'])->name('resort.reports.index');
+    Route::get('/hotel/reports', [HotelReportController::class, 'index'])->name('hotel.reports.index');
+    Route::get('/food/reports', [FoodReportController::class, 'index'])->name('food.reports.index');
 });

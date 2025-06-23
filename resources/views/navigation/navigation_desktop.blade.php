@@ -30,6 +30,9 @@
                             <a href="{{ route('owner-userManagement') }}"><i class="fa fa-users"></i> User
                                 Management</a>
                         </li>
+                        <li class="@yield('active_reports')">
+                            <a data-toggle="tab" href="#tab_reports"><i class="fa fa-credit-card"></i> Reports</a>
+                        </li>
                     @endif
                     @if (auth()->user()->user_role === 'Front Desk - Hotel')
                         {{--  --}}
@@ -109,6 +112,12 @@
                                         Transaction</a></li>
                                 {{--  --}}
                             @endif
+                            @if (auth()->user()->user_role === 'Front Desk - Food')
+                                <li><a href="{{ route('food-foodTransactions') }}"><i class="fa fa-tree"></i>
+                                        Food
+                                        Transaction</a></li>
+                                {{--  --}}
+                            @endif
                         </ul>
                     </div>
                     <div id="tab_billings" class="tab-pane tab-custon-menu-bg animated flipInX @yield('active_billings')">
@@ -131,6 +140,21 @@
                                 {{--  --}}
                                 <li><a href="{{ route('resort-resortBillings') }}"><i class="fa fa-tree"></i> Resort
                                         Billings</a></li>
+                            @endif
+                        </ul>
+                    </div>
+                    <div id="tab_reports" class="tab-pane tab-custon-menu-bg animated flipInX @yield('active_reports')">
+                        <ul class="main-menu-dropdown">
+                            @if (auth()->user()->user_role === 'Owner')
+                                {{--  --}}
+                                <li><a href="{{ route('hotel.reports.index') }}"><i class="fa fa-bed"></i> Hotel
+                                        Reports</a></li>
+                                <li><a href="{{ route('resort.reports.index') }}"><i class="fa fa-tree"></i>
+                                        Resort
+                                        Reports</a></li>
+                                <li><a href="{{ route('food.reports.index') }}"><i class="fa fa-cutlery"></i>
+                                        Food
+                                        Reports</a></li>
                             @endif
                         </ul>
                     </div>

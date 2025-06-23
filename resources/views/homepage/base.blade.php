@@ -343,6 +343,8 @@
     <script src="{{ asset('homepage/js/owl.carousel.min.js') }}"></script>
     <script src="{{ asset('homepage/js/Lobibox.js') }}"></script>
     <script src="{{ asset('js/input-mask/jasny-bootstrap.min.js') }}"></script>
+    <!-- Select2 -->
+    <script src="{{ asset('plugins/select2/js/select2.full.min.js') }}"></script>
     <script type="text/javascript">
         let step = 'default';
         let queryId = null;

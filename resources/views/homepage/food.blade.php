@@ -74,14 +74,14 @@
                             </div>
                         </div>
 
-                        <div class="row mb-4 text-center">
-                            <button class="btn btn-dark filter-btn" data-category="all">All</button>
-                            @foreach ($categories as $category)
-                                <button class="btn btn-outline-dark filter-btn" data-category="{{ $category->id }}">
-                                    {{ $category->category_name }}
-                                </button>
-                            @endforeach
+                        <div class="row mt-0 mb-4 justify-content-center text-center">
+
+                            <!-- Order Now Button -->
+                            <div class="mt-3 w-100">
+                                <a href="/guest/foodOrder"" class="btn btn-dark">Order Now</a>
+                            </div>
                         </div>
+
 
                         <div class="row" id="food-list">
                             @foreach ($foods as $food)
