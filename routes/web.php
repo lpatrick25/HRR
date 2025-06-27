@@ -82,7 +82,7 @@ Route::prefix('/guest')->middleware('guest')->group(function () {
     Route::post('chatbot/response', [ChatbotController::class, 'getResponse'])->name('chatbot-getResponse');
 
     // Thank You Message
-    Route::get('success', [NavigationController::class, 'success'])->name('homepage-success');
+    Route::get('success/{transactionNumber}', [NavigationController::class, 'success'])->name('homepage-success');
 });
 
 // Login, Registration

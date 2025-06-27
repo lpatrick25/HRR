@@ -962,10 +962,10 @@
 
                             setInterval(() => {
                                 window.location.href =
-                                '{{ route('homepage-success') }}';
+                                `/guest/success/${transactionNumber}`;
                             }, 1000);
 
-                            window.open("https://m.me/320237691505456", "_blank");
+                            // window.open("https://m.me/320237691505456", "_blank");
 
                             // Reset stepper to initial step
                             currentStepAdd = 1;

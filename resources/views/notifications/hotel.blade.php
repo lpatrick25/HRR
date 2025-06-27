@@ -149,9 +149,9 @@
                 <p style="margin-top: 10px; text-align: center;">
                     📍 <a href="https://maps.app.goo.gl/zb3kLxuLbT8ANifbA"
                         style="text-decoration: none; text-align: center;">Find Us</a> |
-                    📧 <a href="mailto:{{ $contact->email }}" style="text-decoration: none; text-align: center;">Email
+                    📧 <a href="mailto:{{ $contact->email ?? env('MAIL_FROM_NAME') }}" style="text-decoration: none; text-align: center;">Email
                         Support</a> |
-                    ☎️ {{ $contact->contact }}
+                    ☎️ {{ $contact->contact ?? 'N/A' }}
                 </p>
                 <p style="margin-top: 15px; text-align: center; font-size: 12px; color: #999;">
                     &copy; {{ date('Y') }} Tia Inday Haven Farm Resort. All rights reserved.

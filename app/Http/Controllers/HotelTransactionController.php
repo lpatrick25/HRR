@@ -41,7 +41,7 @@ class HotelTransactionController extends Controller
                 return [
                     'count' => $index + 1,
                     'transaction_number' => $transaction->transaction_number,
-                    'customer_name' => $transaction->customer_name,
+                    'customer_name' => ucwords($transaction->customer_name),
                     'room_name' => $transaction->hotelRoom->room_name . ' - ' . $transaction->hotelRoom->hotelType->type_name,
                     'check_in_date' => $checkIn->format('F j, Y'),
                     'check_out_date' => $checkOut->format('F j, Y'),

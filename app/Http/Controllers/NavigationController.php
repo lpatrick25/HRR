@@ -494,9 +494,17 @@ class NavigationController extends Controller
         return view('homepage.verified', compact('user'));
     }
 
-    public function success()
+    public function success($transactionNumber = null)
     {
-        return view('homepage.success');
+        // If a transaction number is provided, fetch the transaction details
+        if ($transactionNumber) {
+            try {
+                $transaction = HotelTransaction::where('transaction_number', $transactionNumber)->firstOrFail();
+                return view('homepage.success', compact('transaction'));
+            } catch (ModelNotFoundException $e) {
+                return redirect()->route('homepage-homepage')->with('error', 'Transaction not found.');
+            }
+        }
     }
 
     public function dashboard()

@@ -247,7 +247,7 @@
                                 <h5><i class="fa fa-envelope"></i> Email</h5>
                             </div>
                         </div>
-                        <h4 style="text-indent: 15px;">{{ $contact->email }}</h4>
+                        <h4 style="text-indent: 15px;">{{ $contact->email ?? 'N/A' }}</h4>
                     </div>
 
                     <div class="product__page__content mt-3">
@@ -256,7 +256,7 @@
                                 <h5><i class="fa fa-phone"></i> Contact #</h5>
                             </div>
                         </div>
-                        <h4 style="text-indent: 15px;">0{{ $contact->contact }}</h4>
+                        <h4 style="text-indent: 15px;">{{ $contact->contact ?? 'N/A' }}</h4>
                     </div>
 
                     <div class="product__page__content mt-3">
@@ -265,7 +265,7 @@
                                 <h5><i class="fa fa-map-marker"></i> Address</h5>
                             </div>
                         </div>
-                        <h4 style="text-indent: 15px;">{{ $contact->address }}</h4>
+                        <h4 style="text-indent: 15px;">{{ $contact->address ?? 'N/A' }}</h4>
                     </div>
 
                     <div class="product__sidebar">
